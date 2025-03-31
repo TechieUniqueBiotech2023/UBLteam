@@ -17,7 +17,7 @@
       font-family: 'Urbanist', sans-serif;
       background-image: url('https://i.postimg.cc/yYFm5pnP/email-add-03.jpg');
       background-size: cover;
-      background-position: center;
+      background-position: center top 30px; /* Shift background slightly down */
       background-repeat: no-repeat;
       height: 100vh;
       position: relative;
@@ -25,14 +25,8 @@
       overflow: hidden;
     }
 
-    body::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(255,255,255,0.7));
-      z-index: 0;
-    }
+    /* Removed overlay to restore true image color */
+    /* body::before { display: none; } */
 
     .logo {
       position: relative;
@@ -58,7 +52,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: calc(100vh - 140px); /* Leaves room for logo */
+      height: calc(100vh - 140px);
     }
 
     .thank-you-message {
