@@ -17,7 +17,7 @@
       font-family: 'Urbanist', sans-serif;
       background-image: url('https://i.postimg.cc/yYFm5pnP/email-add-03.jpg');
       background-size: cover;
-      background-position: center -10px; /* Shift background slightly down */
+      background-position: 55% -10px; /* Adjusted for better alignment */
       background-repeat: no-repeat;
       height: 100vh;
       position: relative;
@@ -25,18 +25,16 @@
       overflow: hidden;
     }
 
-    /* Removed overlay to restore true image color */
-    /* body::before { display: none; } */
-
     .logo {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 30px 0 10px;
+      padding: 20px 10px 10px;
     }
 
     .logo img {
-      width: 180px;
+      max-width: 180px;
+      width: 40vw;
       height: auto;
       opacity: 0;
       animation: fadeDown 1s ease-out forwards;
@@ -46,7 +44,7 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       padding: 20px;
       display: flex;
@@ -60,12 +58,14 @@
       transform: translateY(20px);
       animation: fadeInUp 1s ease-out forwards;
       animation-delay: 0.5s;
+      padding: 0 1rem;
     }
 
     .thank-you-message h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
       font-weight: 600;
+      line-height: 1.4;
     }
 
     .thank-you-message h1::after {
@@ -75,7 +75,7 @@
     }
 
     .thank-you-message p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       margin-bottom: 2rem;
     }
 
@@ -88,6 +88,7 @@
       border-radius: 8px;
       font-weight: 600;
       transition: background 0.3s ease;
+      font-size: 1rem;
     }
 
     .btn:hover {
@@ -113,9 +114,10 @@
       50% { opacity: 1; transform: scale(1.3); }
     }
 
-    @media (max-width: 600px) {
+    /* Responsive Breakpoints */
+    @media (max-width: 768px) {
       .thank-you-message h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
       }
 
       .thank-you-message p {
@@ -123,17 +125,40 @@
       }
 
       .logo img {
-        width: 140px;
+        width: 120px;
       }
 
       .btn {
         padding: 10px 20px;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
       }
 
       .container {
-        height: calc(100vh - 120px);
-        padding: 10px;
+        height: auto;
+        padding: 40px 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .thank-you-message h1 {
+        font-size: 1.5rem;
+      }
+
+      .thank-you-message p {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px;
+        font-size: 1rem;
+      }
+
+      .container {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 10px;
       }
     }
   </style>
